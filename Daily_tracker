@@ -1,0 +1,27 @@
+# Daily Progress Tracker
+# Goals: Practice Python and English
+
+def main():
+    print("--- Welcome to your Daily Tracker ---")
+    
+    # Input tasks in English
+    tasks = []
+    for i in range(3):
+        task = input(f"Enter task {i+1} completed today: ")
+        tasks.append(task)
+    
+    # Vocabulary practice
+    new_word = input("What is the new English word you learned today? ")
+    meaning = input("What does it mean? ")
+    
+    # Summary
+    print("\n--- Summary of the Day ---")
+    print(f"Tasks finished: {tasks}")
+    print(f"New word of the day: {new_word} ({meaning})")
+    
+    # Save to a file (This creates your local 'database')
+    with open("progress.txt", "a") as file:
+        file.write(f"\nWord: {new_word} | Tasks: {tasks}")
+
+if __name__ == "__main__":
+    main()
